@@ -1,10 +1,4 @@
-import * as React from 'react';
-
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
 
 /**
@@ -14,20 +8,22 @@ import Seo from '@/components/Seo';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import Vercel from '~/svg/Vercel.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
 
 export default function HomePage() {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
-
       <main>
-        <div>Brandon Guzman-Morales</div>
+        <div className='flex min-h-screen items-center justify-center bg-[#010c15]'>
+          <div className='m-16 min-h-screen rounded-lg border border-[#1E2D3D] bg-[#011627] lg:min-w-[1782px]'>
+            <div className='lg:min-h-40 flex items-center border-b-[1px] border-[#1E2D3D] lg:max-h-40'>
+              <h6 className='min-h-full border-r-[1px] border-[#1E2D3D] px-[22px] pr-[154px]'>
+                Brandon Guzman-Morales
+              </h6>
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );
