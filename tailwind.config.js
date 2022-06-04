@@ -16,7 +16,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...fontFamily.sans],
+        primary: ['Fira_Code', ...fontFamily.mono],
+      },
+      fontSize: {
+        sm: ['14px', '20px'],
+        base: ['16px', '21px'],
+        lg: ['20px', '28px'],
+        xl: ['24px', '32px'],
       },
       colors: {
         primary: {
