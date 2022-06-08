@@ -9,7 +9,24 @@ import Seo from '@/components/Seo';
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
 
-export default function HomePage() {
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch(
+    'https://api.github.com/repos/builtbybrandon/portfolio/commits'
+  );
+  const data = await res.json();
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function HomePage({ data }) {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
@@ -87,7 +104,7 @@ export default function HomePage() {
               <div className='h-full w-full grow sm:h-16'></div>
               <div className='z-10 flex w-full flex-col gap-2 self-center px-6'>
                 <p className='text-[#607B96]-l text-[#607B96]'>
-                  &#47;&#47; lastUpdate: 06-07-2022
+                  &#47;&#47; lastUpdate: {data[0].commit.committer.date}
                 </p>
                 <p className='text-[#607B96]'>&#47;&#47; building</p>
                 <p className='text-lg text-[#607B96]'>
