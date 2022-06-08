@@ -1,6 +1,8 @@
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
+import type { GitDateData } from '@/pages/index.types';
+
 /**
  * SVGR Support
  * Caveat: No React Props Type.
@@ -10,15 +12,10 @@ import Seo from '@/components/Seo';
  */
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
   const res = await fetch(
-    'https://api.github.com/repos/builtbybrandon/portfolio/commits'
+    'https://api.github.com/repos/builtbybrandon/portfolio/commits?per_page=1'
   );
   const data = await res.json();
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       data,
@@ -26,7 +23,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function HomePage({ data }) {
+export default function HomePage({ data }: { data: GitDateData[] }) {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
