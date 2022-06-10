@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import type { GitDateData } from '@/pages/index.types';
+import type { GitDateData } from '@/types/index.types';
 
 /**
  * SVGR Support
