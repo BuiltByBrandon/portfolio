@@ -106,7 +106,7 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
                 <p className='text-[#607B96]'>&#47;&#47; building</p>
                 <p className='text-lg text-[#607B96]'>
                   <span className='text-[#4D5BCE]'>const</span>
-                  <span className='text-green-400'> latestProject</span> =
+                  <span className='text-green-400'> latestProject</span> ={' '}
                   <a
                     href='https://google.com'
                     className='text-red-400 hover:underline'
