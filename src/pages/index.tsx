@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
@@ -53,15 +55,21 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
               <div className='invisible flex justify-between border-b border-[#1E2D3D] p-4'>
                 <p className='text-[#607B96]'>null</p>
               </div>
-              <button className='flex w-full items-center border-b border-[#1E2D3D] p-4'>
-                <p className='text-[#607B96]'>_hello</p>
-              </button>
-              <button className='flex w-full items-center border-b border-[#1E2D3D] p-4'>
-                <p className='text-[#607B96]'>_about-me</p>
-              </button>
-              <button className='flex w-full items-center border-b border-[#1E2D3D] p-4'>
-                <p className='text-[#607B96]'>_projects</p>
-              </button>
+              <Link href='/' passHref>
+                <a className='flex w-full items-center border-b border-[#1E2D3D] p-4'>
+                  <p className='text-[#607B96]'>_hello</p>
+                </a>
+              </Link>
+              <Link href='/about' passHref>
+                <a className='flex w-full items-center border-b border-[#1E2D3D] p-4'>
+                  <p className='text-[#607B96]'>_about-me</p>
+                </a>
+              </Link>
+              <Link href='/projects' passHref>
+                <a className='flex w-full items-center border-b border-[#1E2D3D] p-4'>
+                  <p className='text-[#607B96]'>_projects</p>
+                </a>
+              </Link>
             </div>
           </nav>
           <nav className='hidden w-full items-center justify-between border-b border-[#1E2D3D] px-4 sm:flex'>
@@ -69,15 +77,25 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
               <div className='flex h-full w-full min-w-[12rem] flex-[0.2] items-center border-r border-[#1E2D3D] py-2'>
                 <p className='text-[#607B96]'>brandon-guzman</p>
               </div>
-              <button className='h-full w-max border-r border-b-2 border-[#1E2D3D] border-b-[#FEA55F] px-4 py-2'>
-                <p className='text-[#607B96]'>_hello</p>
-              </button>
-              <button className='h-full w-max border-r border-[#1E2D3D] px-4 py-2 '>
-                <p className='text-[#607B96] hover:text-gray-300'>_about-me</p>
-              </button>
-              <button className='h-full w-max border-r border-[#1E2D3D] px-4 py-2 '>
-                <p className='text-[#607B96] hover:text-gray-300'>_projects</p>
-              </button>
+              <Link href='/' passHref>
+                <a className='h-full w-max border-r border-b-2 border-[#1E2D3D] border-b-[#FEA55F] px-4 py-2'>
+                  <p className='text-[#607B96]'>_hello</p>
+                </a>
+              </Link>
+              <Link href='/about' passHref>
+                <a className='h-full w-max border-r border-[#1E2D3D] px-4 py-2 '>
+                  <p className='text-[#607B96] hover:text-gray-300'>
+                    _about-me
+                  </p>
+                </a>
+              </Link>
+              <Link href='/projects'>
+                <a className='h-full w-max border-r border-[#1E2D3D] px-4 py-2 '>
+                  <p className='text-[#607B96] hover:text-gray-300'>
+                    _projects
+                  </p>
+                </a>
+              </Link>
             </div>
           </nav>
           <div className='relative flex h-full w-full flex-1 grow flex-col sm:flex-row sm:justify-center sm:gap-10 '>
@@ -175,7 +193,12 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
             <div className='flex items-center gap-4'>
               <p className='py-2 pl-4 text-[#607B96] '>find me on: </p>
               <div className='flex items-center'>
-                <button className='btn-b flex items-center justify-center border-l border-[#1E2D3D] p-2 opacity-60 hover:opacity-100'>
+                <a
+                  href='https://twitter.com/socialbybrandon'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='btn-b flex items-center justify-center border-l border-[#1E2D3D] p-2 opacity-60 hover:opacity-100'
+                >
                   <svg
                     width='24'
                     height='24'
@@ -188,8 +211,13 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
                       fill='#607B96'
                     ></path>
                   </svg>
-                </button>
-                <button className='btn-b flex items-center justify-center border-x border-[#1E2D3D] p-2 opacity-60 hover:opacity-100'>
+                </a>
+                <a
+                  href='https://www.linkedin.com/in/brandon-guzman-morales/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='btn-b flex items-center justify-center border-x border-[#1E2D3D] p-2 opacity-60 hover:opacity-100'
+                >
                   <svg
                     width='24'
                     height='24'
@@ -202,10 +230,15 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
                       fill='#607B96'
                     ></path>
                   </svg>
-                </button>
+                </a>
               </div>
             </div>
-            <div className='flex items-center border-l border-[#1E2D3D] pr-4'>
+            <a
+              href='https://github.com/BuiltByBrandon'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center border-l border-[#1E2D3D] pr-4'
+            >
               <p className='px-4 py-2 text-[#607B96]'>@BuiltByBrandon </p>
               <button className='btn-b flex items-center justify-center p-2 opacity-60 hover:opacity-100'>
                 <svg
@@ -221,7 +254,7 @@ export default function HomePage({ data }: { data: GitDateData[] }) {
                   ></path>
                 </svg>
               </button>
-            </div>
+            </a>
           </footer>
         </main>
       </div>
